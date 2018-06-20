@@ -117,8 +117,19 @@ type variableProperties struct {
 			Srcs         []string
 		}
 
+		Device_support_hwfde struct {
+			Cflags []string
+			Header_libs []string
+			Shared_libs []string
+		}
+
+		Device_support_hwfde_perf struct {
+			Cflags []string
+		}
+
 		// include Validus variables
 		Validus android.Product_variables
+
 	} `android:"arch_variant"`
 }
 
@@ -153,6 +164,9 @@ type productVariables struct {
 	DeviceSecondaryArchVariant *string   `json:",omitempty"`
 	DeviceSecondaryCpuVariant  *string   `json:",omitempty"`
 	DeviceSecondaryAbi         *[]string `json:",omitempty"`
+
+	Device_support_hwfde       *bool `json:",omitempty"`
+	Device_support_hwfde_perf  *bool `json:",omitempty"`
 
 	HostArch          *string `json:",omitempty"`
 	HostSecondaryArch *string `json:",omitempty"`
